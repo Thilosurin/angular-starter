@@ -1,0 +1,26 @@
+<div class="container" *ngIf="!!movie">
+  <div class="card mb-3" style="max-width: 1080px;">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img src="{{ movie.Poster }}" class="card-img" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+        <i class="fas fa-plus"></i>
+        <h5 class="card-title">{{ movie.Title }} <span>({{ movie.Year }})</span></h5>
+        <p class="card-text">{{ movie.Plot }}</p>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Metascore : <strong>{{ movie.Metascore }}</strong></li>
+          <li class="list-group-item">IMDB Rating : <strong>{{ movie.imdbRating }}</strong></li>
+          <li class="list-group-item">IMDB Votes : <strong>{{ movie.imdbVotes }}</strong></li>
+          <li class="list-group-item">BoxOffice : <strong>{{ movie.BoxOffice }}</strong></li>
+        </ul>
+        <br>
+        <p>Runtime : {{ movie.Runtime }}</p>
+        <p>Genre : {{ movie.Genre }}</p>
+        <p>Director : {{ movie.Director }}</p>
+        <p>Actors : {{ movie.Actors }}</p>
+      </div>
+    </div>
+  </div>
+</div>
