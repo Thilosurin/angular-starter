@@ -2,6 +2,10 @@
   margin-top: 50px;
 }
 
+.card-img {
+  height: 100%;
+}
+
 i {
   float: right;
   font-size: 28px;

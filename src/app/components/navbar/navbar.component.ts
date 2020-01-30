@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { MovieService } from '../../services/movie.service';
 
 @Component({
   selector: 'app-navbar',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  aml: number = 0
 
-  constructor() { }
+  constructor(private _movieService: MovieService) { }
 
   ngOnInit() {
+
   }
 
 }

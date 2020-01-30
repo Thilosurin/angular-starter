@@ -1,0 +1,9 @@
+a {
+  display: flex;
+}
+
+i {
+  font-size: 24px;
+  margin-left: 1rem;
+  color: #f4f4f4;
+}

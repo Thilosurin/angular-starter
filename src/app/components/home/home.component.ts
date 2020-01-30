@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { MovieService } from '../../services/movie.service';
 import Axios from 'axios';
 
 @Component({
@@ -9,10 +10,11 @@ import Axios from 'axios';
 export class HomeComponent implements OnInit {
   movies = [];
 
-  constructor() {}
+  constructor(private _movieService: MovieService) {}
 
   ngOnInit() {
-    this.fetchData();
+    // this.fetchData();
+    this._movieService.getMoviesUrl().subscribe(m => this.movies = m)
   }
 
   async fetchData() {

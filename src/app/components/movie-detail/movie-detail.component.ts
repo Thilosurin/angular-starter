@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Movie } from '../movie';
+import { MovieService } from '../../services/movie.service';
+import { Movie } from '../../movie';
 import Axios from 'axios'
 
 @Component({
@@ -11,12 +12,17 @@ import Axios from 'axios'
 export class MovieDetailComponent implements OnInit {
   movie: Movie
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(
+    private route: ActivatedRoute,
+    private _movieService: MovieService
+  ) { }
 
   ngOnInit() {
-    this.showMovie()
+    // this.showMovie()
+    const id = this.route.snapshot.paramMap.get('id');
+    this._movieService.getMovieUrl(id).subscribe(m => this.movie = m)
   }
-  async showMovie () {
+  async showMovie() {
     const id = this.route.snapshot.paramMap.get('id');
     const response = await Axios.get("http://www.omdbapi.com/", {
       params: {

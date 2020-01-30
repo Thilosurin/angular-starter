@@ -1,10 +1,10 @@
 <div class="container">
   <div class="row row-cols-1 row-cols-md-3">
     <div class="col mb-4" *ngFor="let m of movies">
-      <a class="card" routerLink="/movie/{{ m.imdbID }}">
+      <a class="card bg-dark" routerLink="/movie/{{ m.imdbID }}">
         <img src="{{m.Poster}}" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">{{ m.Title }}</h5>
+          <h5 class="card-title">{{ m.Title | slice: 0 : 30 }}...</h5>
         </div>
       </a>
     </div>
